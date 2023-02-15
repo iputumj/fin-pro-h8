@@ -1,3 +1,44 @@
-// .app {
-//   padding: 20px;
-// }
+.app {
+  .app-content {
+    padding: 20px;
+
+    h2 {
+      font-family: 'Poppins';
+    }
+
+    .movies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      width: 200px;
+      transition: 0.3s;
+      border-radius: 4px;
+      margin: 15px;
+
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .poster-title {
+        p {
+          font-family: 'Poppins';
+          width: 200px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
