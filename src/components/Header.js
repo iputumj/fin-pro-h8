@@ -4,12 +4,12 @@ import Search from './Search';
 // styles
 import './Header.scss';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className='header'>
       <div className='header-content'>
         <div className='header-logo'>
-          <h1>FinProH8</h1>
+          <h1>{props.title}</h1>
         </div>
         <div className='header-search'>
           <Search />
