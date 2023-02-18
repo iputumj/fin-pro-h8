@@ -1,10 +1,9 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
 // styles
 import './Movie.scss';
 
 const Movie = (props) => {
-  console.log(props.movies, 'movies');
   return (
     <div className='movies'>
       {props.movies.Search

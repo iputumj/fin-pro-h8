@@ -1,19 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // styles
 import './Search.scss';
 
-const Search = () => {
+const Search = (props) => {
+  const [keyword, setKeyword] = useState('');
+
+  const handleInput = (e) => {
+    setKeyword(e.target.value);
+  };
+
+  const resetField = () => {
+    setKeyword('');
+  };
+
+  const searchFunction = (e) => {
+    e.preventDefault();
+    props.search(keyword);
+    resetField();
+  };
+
   return (
-    <div className='search-container'>
+    <form className='search-container'>
       <input
         type='text'
         id='search'
         className='search'
         placeholder='Search...'
+        onChange={handleInput}
       />
-      <button className='button-search'>Search</button>
-    </div>
+
+      <input
+        className='button-search'
+        onClick={searchFunction}
+        type='submit'
+        value='Search'
+      />
+    </form>
   );
 };
 

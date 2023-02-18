@@ -6,6 +6,24 @@
       font-family: 'Poppins';
     }
 
+    .app-search {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .search-container {
+        padding: 20px;
+        margin-right: 10px;
+
+        .search {
+          margin-right: 4px;
+          border: 1px solid grey;
+          border-radius: 4px;
+          padding: 7px;
+        }
+      }
+    }
+
     .movies {
       display: flex;
       flex-wrap: wrap;
