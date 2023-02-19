@@ -8,12 +8,18 @@ import './App.scss';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [message, setMessage] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('http://www.omdbapi.com/?&apikey=7690a23c&s=kenshin')
       .then((response) => response.json())
       .then((data) => {
         setMovies(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setMessage(error);
       });
   }, []);
 
@@ -22,6 +28,10 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         setMovies(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setMessage(error);
       });
   };
 
@@ -33,9 +43,14 @@ const App = () => {
           <h2>Show your favorite movies</h2>
           <Search search={search} />
         </div>
-        <Movie movies={movies} />
+        {loading && !message ? (
+          <p className='loading'>Loading ...</p>
+        ) : message ? (
+          <p>{message}</p>
+        ) : (
+          <Movie movies={movies} />
+        )}
       </div>
-      d
     </div>
   );
 };

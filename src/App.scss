@@ -6,6 +6,12 @@
       font-family: 'Poppins';
     }
 
+    .loading {
+      display: flex;
+      justify-content: center;
+      padding: 10%;
+    }
+
     .app-search {
       display: flex;
       flex-direction: row;
@@ -51,7 +57,7 @@
       }
 
       .poster-title {
-        background-color: #0081b4;
+        background-color: #00337c;
         border: none;
         border-radius: 0 0 5px 5px;
         p {
